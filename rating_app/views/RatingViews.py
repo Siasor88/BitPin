@@ -2,9 +2,9 @@
 from rest_framework import generics, status
 from rest_framework.response import Response
 
-from models.Post import Post
-from models.serializers.RatingSerializer import RatingSerializer
-from kafka_agents.producer import send_rating
+from rating_app.models.Post import Post
+from rating_app.models.serializers.RatingSerializer import RatingSerializer
+from rating_app.kafka_agents.producer import send_rating
 
 
 class SubmitRatingView(generics.GenericAPIView):
@@ -24,7 +24,7 @@ class SubmitRatingView(generics.GenericAPIView):
         rating_data = {
             'post_id': str(post_id),
             'user_id': str(user_id),
-            'rating': rating_value
+            'rating': rating_value,
         }
 
         send_rating(rating_data)

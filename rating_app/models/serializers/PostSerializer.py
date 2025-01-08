@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from models.Post import Post
-from models.Rating import Rating
+from rating_app.models.Post import Post
+from rating_app.models.Rating import Rating
 
 
 class PostSerializer(serializers.ModelSerializer):

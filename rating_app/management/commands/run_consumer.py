@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from kafka_agents.consumer import consume_ratings
+from rating_app.kafka_agents.consumer import consume_ratings
 
 
 class Command(BaseCommand):

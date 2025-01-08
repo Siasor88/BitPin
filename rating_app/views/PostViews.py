@@ -1,12 +1,11 @@
 from rest_framework import generics
-from models.Post import Post
-from models.serializers.PostSerializer import PostSerializer
-from django.core.cache import cache
+from rating_app.models.Post import Post
+from rating_app.models.serializers.PostSerializer import PostSerializer
 from rest_framework.pagination import PageNumberPagination
 
 
 class PostPagination(PageNumberPagination):
-    page_size = 50  
+    page_size = 50
     page_size_query_param = 'page_size'
     max_page_size = 1000
 

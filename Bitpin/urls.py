@@ -16,9 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls import path
-from views.PostViews import PostListView
-from views.RatingViews import *
+from rating_app.views.PostViews import PostListView
+from rating_app.views.RatingViews import *
 
 
 urlpatterns = [

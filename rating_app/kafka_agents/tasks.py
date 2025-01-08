@@ -1,13 +1,12 @@
 from celery import shared_task
 from django.core.exceptions import ValidationError
 
-from Bitpin.celery import app
-from models.Post import Post
-from models.Rating import Rating
+from rating_app.models.Post import Post
+from rating_app.models.Rating import Rating
 from django.db import transaction
 from django.core.cache import cache
 
-from models.serializers.RatingSerializer import RatingSerializer
+from rating_app.models.serializers.RatingSerializer import RatingSerializer
 
 VOTE_THRESHOLD = 1000  # Could be added to the projects meta data file
 DISCOUNT_FACTOR = 0.5  # Could be added to the projects meta data file

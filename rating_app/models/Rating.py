@@ -3,7 +3,7 @@ import uuid
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
-from models.Post import Post
+from rating_app.models.Post import Post
 
 
 class Rating(models.Model):
@@ -18,7 +18,7 @@ class Rating(models.Model):
     class Meta:
         unique_together = ('post_id', 'user_id')
         indexes = [
-            models.Index(fields=['post']),
+            models.Index(fields=['post_id']),
             models.Index(fields=['user_id']),
         ]
 
